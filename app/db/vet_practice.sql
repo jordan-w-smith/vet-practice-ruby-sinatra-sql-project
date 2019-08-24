@@ -15,6 +15,6 @@ CREATE TABLE pets (
   name VARCHAR(255),
   specie VARCHAR(255),
   breed VARCHAR(255),
-  date_of_birth VARCHAR,
+  year_of_birth INTEGER,
   age INTEGER
 );
