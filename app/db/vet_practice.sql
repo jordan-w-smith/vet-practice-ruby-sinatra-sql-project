@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS vets;
 DROP TABLE IF EXISTS pets;
+DROP TABLE IF EXISTS vets;
+
 
 CREATE TABLE vets (
   id SERIAL4 PRIMARY KEY,
@@ -16,5 +17,6 @@ CREATE TABLE pets (
   specie VARCHAR(255),
   breed VARCHAR(255),
   year_of_birth INTEGER,
-  age INTEGER
+  age INTEGER,
+  vet_id INT4 REFERENCES vets(id)
 );

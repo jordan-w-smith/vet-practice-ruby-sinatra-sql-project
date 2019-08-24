@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Pet
-  attr_accessor :name, :specie, :breed, :year_of_birth, :age
+  attr_accessor :name, :specie, :breed, :year_of_birth, :age, :vet_id
 
   def initialize(options)
     @id = options['id']. to_i
@@ -10,6 +10,7 @@ class Pet
     @breed = options['breed']
     @year_of_birth = options['year_of_birth'].to_i
     @age = DateTime.now.year - @year_of_birth.to_i
+    @vet_id = options['vet_id'].to_i
   end
 
   def save()
@@ -20,10 +21,11 @@ class Pet
       breed,
       year_of_birth,
       age
+      vet_id
       )
       VALUES
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
       RETURNING *"
     values= [
@@ -31,7 +33,8 @@ class Pet
       @specie,
       @breed,
       @year_of_birth,
-      @age
+      @age,
+      @vet_id
     ]
     pets_data = SqlRunner.run(sql, values)
     @id = pets_data.first()['id'].to_i
@@ -52,13 +55,14 @@ class Pet
       specie,
       breed,
       year_of_birth,
-      age
+      age,
+      vet_id
       )
       =
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
-      WHERE id = $6
+      WHERE id = $7
       "
       values = [
         @name,
@@ -66,6 +70,7 @@ class Pet
         @breed,
         @year_of_birth,
         @age,
+        @vet_id,
         @id
       ]
       SqlRunner.run(sql, values)
