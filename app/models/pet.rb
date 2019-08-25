@@ -4,7 +4,7 @@ class Pet
   attr_accessor :name, :specie, :breed, :year_of_birth, :age, :vet_id
 
   def initialize(options)
-    @id = options['id']. to_i
+    @id = options['id']. to_i if options['id']
     @name = options['name']
     @specie = options['specie']
     @breed = options['breed']
@@ -20,7 +20,7 @@ class Pet
       specie,
       breed,
       year_of_birth,
-      age
+      age,
       vet_id
       )
       VALUES
@@ -37,7 +37,7 @@ class Pet
       @vet_id
     ]
     pets_data = SqlRunner.run(sql, values)
-    @id = pets_data.first()['id'].to_i
+    @id = pets_data.first()['id']
   end
 
   def self.all()

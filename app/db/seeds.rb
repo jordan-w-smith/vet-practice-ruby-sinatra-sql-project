@@ -1,6 +1,8 @@
 require_relative('../models/vet')
 require_relative('../models/pet')
 
+Vet.delete_all()
+
 vet1 = Vet.new({
   "first_name" => "Clive",
   "last_name" => "Jones",
@@ -62,7 +64,7 @@ pet2.update()
 # vet2.delete()
 # pet3.delete()
 
-# Vet.delete_all()
+
 # Pet.delete_all()
 # p Pet.all()
 
@@ -70,4 +72,4 @@ pet2.update()
 
 # p DateTime.now.year
 
-# p Vet.all()
+p Vet.all()

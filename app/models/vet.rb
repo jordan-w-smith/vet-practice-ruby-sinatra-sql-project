@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Vet
 
   attr_accessor :first_name, :last_name, :pet_count, :available_slots
-  attr_reader :max_pets
+  attr_reader :max_pets, :id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -37,7 +37,7 @@ class Vet
       @available_slots
     ]
     vets_data = SqlRunner.run(sql, values)
-    @id = vets_data.first()['id'].to_i
+    @id = vets_data.first()['id']
   end
 
   def self.all()
