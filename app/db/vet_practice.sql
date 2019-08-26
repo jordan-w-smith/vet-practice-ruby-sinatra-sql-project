@@ -18,5 +18,9 @@ CREATE TABLE pets (
   breed VARCHAR(255),
   year_of_birth INTEGER,
   age INTEGER,
-  vet_id INT4 REFERENCES vets(id)
+  notes VARCHAR(255),
+  owner_name VARCHAR(255),
+  owner_phone VARCHAR(255),
+  owner_address VARCHAR(255),
+  vet_id INT4 REFERENCES vets(id) ON DELETE CASCADE
 );

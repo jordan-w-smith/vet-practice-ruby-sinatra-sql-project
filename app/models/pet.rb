@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Pet
-  attr_accessor :name, :specie, :breed, :year_of_birth, :age, :vet_id
+  attr_accessor :name, :specie, :breed, :year_of_birth, :age, :notes, :vet_id, :owner_name, :owner_phone, :owner_address
 
   def initialize(options)
     @id = options['id']. to_i if options['id']
@@ -10,6 +10,10 @@ class Pet
     @breed = options['breed']
     @year_of_birth = options['year_of_birth'].to_i
     @age = DateTime.now.year - @year_of_birth.to_i
+    @notes = options['notes']
+    @owner_name = options['owner_name']
+    @owner_phone = options['owner_phone']
+    @owner_address = options['owner_address']
     @vet_id = options['vet_id'].to_i
   end
 
@@ -21,11 +25,15 @@ class Pet
       breed,
       year_of_birth,
       age,
+      notes,
+      owner_name,
+      owner_phone,
+      owner_address,
       vet_id
       )
       VALUES
       (
-        $1, $2, $3, $4, $5, $6
+        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10
       )
       RETURNING *"
     values= [
@@ -34,6 +42,10 @@ class Pet
       @breed,
       @year_of_birth,
       @age,
+      @notes,
+      @owner_name,
+      @owner_phone,
+      @owner_address,
       @vet_id
     ]
     pets_data = SqlRunner.run(sql, values)
@@ -56,13 +68,17 @@ class Pet
       breed,
       year_of_birth,
       age,
+      notes,
+      owner_name,
+      owner_phone,
+      owner_address,
       vet_id
       )
       =
       (
-        $1, $2, $3, $4, $5, $6
+        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10
       )
-      WHERE id = $7
+      WHERE id = $11
       "
       values = [
         @name,
@@ -70,6 +86,10 @@ class Pet
         @breed,
         @year_of_birth,
         @age,
+        @notes,
+        @owner_name,
+        @owner_phone,
+        @owner_address,
         @vet_id,
         @id
       ]
@@ -86,6 +106,15 @@ class Pet
   def self.delete_all
     sql = "DELETE FROM pets"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM pets
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    pet = Pet.new(result)
+    return pet
   end
 
 end

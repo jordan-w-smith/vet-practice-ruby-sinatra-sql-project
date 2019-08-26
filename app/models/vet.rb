@@ -12,6 +12,7 @@ class Vet
     @max_pets = options['max_pets'].to_i
     @pet_count = options['pet_count'].to_i
     @available_slots = @max_pets - @pet_count
+
     # options['available_slots'].to_i
   end
 
