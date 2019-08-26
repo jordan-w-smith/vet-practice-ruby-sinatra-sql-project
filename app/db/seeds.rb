@@ -62,7 +62,7 @@ pet3.save()
 pet2.year_of_birth = 2001
 pet2.update()
 
-p Pet.find(2)
+# p Pet.find(16)
 # vet2.delete()
 # pet3.delete()
 

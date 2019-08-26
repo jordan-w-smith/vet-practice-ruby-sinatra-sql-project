@@ -2,9 +2,10 @@ require_relative('../db/sql_runner')
 
 class Pet
   attr_accessor :name, :specie, :breed, :year_of_birth, :age, :notes, :vet_id, :owner_name, :owner_phone, :owner_address
+  attr_reader :id
 
   def initialize(options)
-    @id = options['id']. to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @specie = options['specie']
     @breed = options['breed']

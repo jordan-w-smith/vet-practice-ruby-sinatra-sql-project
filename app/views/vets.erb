@@ -1,0 +1,5 @@
+<p>vets list goes here</p>
+
+<% @vets.each do |vet| %>
+<p> Name: <%= "DR #{vet.first_name} #{vet.last_name}"%> </p>
+<% end %>
