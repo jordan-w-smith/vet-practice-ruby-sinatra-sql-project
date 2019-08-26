@@ -36,6 +36,10 @@ pet1 = Pet.new({
   "specie" => "Aligator",
   "breed" => "Sharptooth",
   "year_of_birth" => 2010,
+  "notes" => "Very Sharp Teeth",
+  "owner_name" => "Steven",
+  "owner_phone" => "012345678910",
+  "owmer_address" => "1 Edinburgh Road",
   "vet_id" => vet2.id
   })
 
@@ -44,6 +48,10 @@ pet2 = Pet.new({
   "specie" => "Lion",
   "breed" => "Longhair",
   "year_of_birth" => 2005,
+  "notes" => "Ferile Lion",
+  "owner_name" => "Jerry",
+  "owner_phone" => "012345678910",
+  "owner_address" => "3 Castle Terrace",
   "vet_id" => vet3.id
   })
 
@@ -52,6 +60,10 @@ pet3 = Pet.new({
   "specie" => "Seahorse",
   "breed" => "Sea Shire",
   "year_of_birth" => 1997,
+  "notes" => "Doesn't like being kept out of water",
+  "owner_name" => "Ricardo",
+  "owner_phone" => "012345678910",
+  "owner_address" => "5 Old Town Road",
   "vet_id" => vet1.id
   })
 
@@ -74,4 +86,4 @@ pet2.update()
 
 # p DateTime.now.year
 
-p Vet.all()
+# p Vet.all()

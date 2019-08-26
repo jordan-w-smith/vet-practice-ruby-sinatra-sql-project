@@ -14,3 +14,8 @@ get '/pets' do
   @pets = Pet.all
   erb(:pets)
 end
+
+get '/pets/:id' do
+  @pets = Pet.find(params[:id])
+  erb(:pet_details)
+end
