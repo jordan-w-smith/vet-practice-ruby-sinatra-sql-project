@@ -1,14 +1,18 @@
-<h1>All Pets</h1>
+<div class="all-pets">
 
-<% @pets.each do |pet| %>
-  <p>Name: <%= pet.name %> </p>
-  <p>Specie: <%= pet.specie %></p>
-  <p>Breed: <%= pet.breed %> </p>
-  <p>Age: <%= pet.age %> </p>
-  <a href="pets/<%= pet.id %>">See Details</a>
+  <h1>All Pets</h1>
+
+  <% @pets.each do |pet| %>
+    <p>Name: <%= pet.name %> </p>
+    <p>Specie: <%= pet.specie %></p>
+    <p>Breed: <%= pet.breed %> </p>
+    <p>Age: <%= pet.age %> </p>
+    <a href="pets/<%= pet.id %>">See Details</a>
+    <hr>
+  <% end %>
+
   <hr>
-<% end %>
 
-<hr>
+  <a href="/pets/new">Create New Pet</a>
 
-<a href="/pets/new">Create New Pet</a>
+</div>
