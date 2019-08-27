@@ -9,3 +9,6 @@
 <p>Owner Phone Number: <%= @pet.owner_phone %> </p>
 <p>Owner Address: <%= @pet.owner_address %> </p>
 <p>Vet Assigned: <%= "DR #{@vet.first_name} #{@vet.last_name}" %> </p>
+
+
+<a href="/vets/<%= @pet.id %>/edit">Edit Record</a>

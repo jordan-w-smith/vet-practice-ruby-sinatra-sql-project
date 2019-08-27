@@ -10,6 +10,8 @@ get '/vets' do
   erb(:vets)
 end
 
+#create new vet
+
 get '/vets/new' do
   erb(:new_vet)
 end
@@ -20,17 +22,33 @@ post '/vets' do
   erb(:create_vet_success)
 end
 
+# edit existing vet details
+
+get '/vets/:id/edit' do
+  @vet = Vet.find(params[:id])
+  erb(:edit_vet)
+end
+
+post '/vets/:id' do
+  Vet.new(params).update
+  redirect to '/vets'
+end
+
+#view individual vet details
+
 get '/vets/:id' do
   @vet = Vet.find(params[:id])
   erb(:vet_details)
 end
 
-
+# get all pets
 
 get '/pets' do
   @pets = Pet.all
   erb(:pets)
 end
+
+# create new pet
 
 get '/pets/new' do
   @vets = Vet.all
@@ -42,6 +60,23 @@ post '/pets' do
   @pet.save()
   erb(:create_pet_success)
 end
+
+# edit pet
+
+get '/pets/:id/edit' do
+  @pet = Pet.find(params[:id])
+  @vets = Vet.all
+  erb(:edit_pet)
+end
+
+post '/pets/:id' do
+  Pet.new(params).update
+  redirect to '/pets'
+end
+
+
+
+# show individual pet details
 
 get '/pets/:id' do
   @pet = Pet.find(params[:id])

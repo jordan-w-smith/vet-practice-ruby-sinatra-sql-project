@@ -1,0 +1,42 @@
+<h1>Edit Pet</h1>
+
+<form method="post" action="/pets/<%= @pet.id %>">
+  <label for="name">Name: </label>
+  <input type="text" name="name" id="name" value="<%= @pet.name %>">
+
+  <label for="specie">Specie: </label>
+  <input type="text" name="specie" id="specie" value="<%= @pet.specie %>">
+
+  <label for="breed">Breed: </label>
+  <input type="text" name="breed" id="breed" value="<%= @pet.breed %>">
+
+  <label for="year-of-birth">Year of Birth: </label>
+  <input type="number" name="year_of_birth" id="year-of-birth" value="<%= @pet.year_of_birth %>">
+
+  <label for="notes">Notes: </label>
+  <input type="text" name="notes" id="notes" value="<%= @pet.notes %>">
+
+  <label for="owner-name">Owner Name: </label>
+  <input type="text" name="owner_name" id="owner-name" value="<%= @pet.owner_name %>">
+
+  <label for="owner-phone">Owner Phone Number: </label>
+  <input type="text" name="owner_phone" id="owner-phone" value="<%= @pet.owner_phone %>">
+
+  <label for="owner-address">Owner Address</label>
+  <input type="text" name="owner_address" id="owner-address" value="<%= @pet.owner_address %>">
+
+  <label for="vet-id">Vet Responsible: </label>
+  <select name="vet_id" id="vet-id">
+    <% for vet in @vets %>
+      <option
+      <% if @pet.vet_id == vet.id  %>
+        selected <%= vet.id %>><%= vet.first_name %> <%= vet.last_name %>
+      <% else %>
+         value=<%= vet.id %>><%= vet.first_name %> <%= vet.last_name %>
+      <% end %>
+    </option>
+    <% end %>
+  </select>
+
+
+</form>

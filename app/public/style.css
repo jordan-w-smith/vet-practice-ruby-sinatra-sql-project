@@ -1,3 +1,9 @@
 p {
   color: red;
 }
+
+nav li, nav li a {
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+}
