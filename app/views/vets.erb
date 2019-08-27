@@ -1,5 +1,18 @@
-<p>vets list goes here</p>
+<h1>All Vets</h1>
 
 <% @vets.each do |vet| %>
-<p> Name: <%= "DR #{vet.first_name} #{vet.last_name}"%> </p>
+  <p> Name: <%= "DR #{vet.first_name} #{vet.last_name}"%> </p>
+  <p>
+  <% if vet.available_slots < 1 %>
+    <%= "Fully Booked" %>
+    <% else %>
+    <%= "Has Availability" %>
+  <% end %>
+  </p>
+  <a href="vets/<%= vet.id %>">See Profile</a>
+  <hr>
+
 <% end %>
+
+<hr>
+<a href="/vets/new">Create New Vet</a>

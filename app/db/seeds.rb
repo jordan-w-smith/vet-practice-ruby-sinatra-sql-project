@@ -6,6 +6,7 @@ Vet.delete_all()
 vet1 = Vet.new({
   "first_name" => "Clive",
   "last_name" => "Jones",
+  "phone_number" => "012345678910",
   "max_pets" => 5,
   "pet_count" => 3
   })
@@ -13,6 +14,7 @@ vet1 = Vet.new({
 vet2 = Vet.new({
   "first_name" => "Ashley",
   "last_name" => "Carson",
+  "phone_number" => "012345678910",
   "max_pets" => 8,
   "pet_count" => 8
   })
@@ -20,6 +22,7 @@ vet2 = Vet.new({
 vet3 = Vet.new({
   "first_name" => "Cleveland",
   "last_name" => "Brown",
+  "phone_number" => "012345678910",
   "max_pets" => 5,
   "pet_count" => 4
   })
@@ -28,8 +31,7 @@ vet1.save()
 vet2.save()
 vet3.save()
 
-vet2.last_name = "Clifton"
-vet2.update()
+
 
 pet1 = Pet.new({
   "name" => "Raymond",
@@ -39,7 +41,7 @@ pet1 = Pet.new({
   "notes" => "Very Sharp Teeth",
   "owner_name" => "Steven",
   "owner_phone" => "012345678910",
-  "owmer_address" => "1 Edinburgh Road",
+  "owner_address" => "1 Edinburgh Road",
   "vet_id" => vet2.id
   })
 
@@ -70,11 +72,14 @@ pet3 = Pet.new({
 pet1.save()
 pet2.save()
 pet3.save()
-
-pet2.year_of_birth = 2001
-pet2.update()
-
+#
+# pet2.year_of_birth = 2001
+# pet2.update()
+#
+# p Vet.find(11)
 # p Pet.find(16)
+
+
 # vet2.delete()
 # pet3.delete()
 
@@ -87,3 +92,6 @@ pet2.update()
 # p DateTime.now.year
 
 # p Vet.all()
+
+# vet2.last_name = "Clifton"
+# vet2.update()

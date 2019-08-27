@@ -1,0 +1,40 @@
+<form method="post" action="/pets">
+  <label for="name">Name: </label>
+  <input type="text" name="name" id="name">
+
+  <label for="specie">Specie: </label>
+  <input type="text" name="specie" id="specie">
+
+  <label for="breed">Breed: </label>
+  <input type="text" name="breed" id="breed">
+
+  <label for="year-of-birth">Year of Birth: </label>
+  <input type="number" name="year_of_birth" id="year-of-birth">
+
+  <label for="notes">Notes: </label>
+  <input type="text" name="notes" id="notes">
+
+  <label for="owner-name">Owner Name: </label>
+  <input type="text" name="owner_name" id="owner-name">
+
+  <label for="owner-phone">Owner Phone Number: </label>
+  <input type="text" name="owner_phone" id="owner-phone">
+
+  <label for="owner-address">Owner Address: </label>
+  <input type="text" name="owner_address" id="owner-address">
+
+  <label for="assign-vet">Assign Vet</label>
+  <select name="vet_id" id="assign-vet">
+    <% for vet in @vets %>
+      <option value="<%= vet.id %>"><%= vet.first_name + " " + vet.last_name %></option>
+    <% end %>
+
+  </select>
+
+
+
+
+
+  <input type="submit" value="Save Record">
+
+</form>

@@ -6,6 +6,7 @@ CREATE TABLE vets (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR,
   last_name VARCHAR,
+  phone_number VARCHAR,
   max_pets INTEGER,
   pet_count INTEGER,
   available_slots INTEGER
