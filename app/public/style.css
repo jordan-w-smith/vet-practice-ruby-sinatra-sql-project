@@ -5,5 +5,109 @@ p {
 nav li, nav li a {
   list-style-type: none;
   text-decoration: none;
-  display: inline;
+
+}
+
+nav {
+  /* width: 20%; */
+  background-color: brown;
+  min-height: 300px;
+  border-top-left-radius: 15px ;
+  border-bottom-left-radius: 15px;
+
+}
+
+nav ul {
+  padding-top: 20px;
+  padding-left: 0;
+  width: 100%;
+}
+
+nav li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+nav a {
+  color: white;
+  font-size: 23px;
+  padding-left: 50px;
+
+}
+
+header {
+  width: 15%;
+  margin-left: 70px;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.pet-details {
+  width: 47%;
+  /* margin-left: auto;
+  margin-right: auto; */
+  background-color: #4df083;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.pet-details-table {
+  width: 100%;
+}
+
+.pet-details-table td, .pet-details-table th {
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+
+}
+
+.pet-details-table tr {
+  background-color: #40c28a;
+  margin-bottom: 20px;
+}
+
+.pet-details-table th {
+  width: 40%;
+}
+
+.pet-details-table td {
+  width: 60%;
+}
+
+.pet-owner-details-table {
+  border: 1px solid black;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pet-owner-details-table th {
+  border-right: 1px solid black;
+  width: 50%;
+}
+
+.pet-owner-details-table td {
+  text-align: center;
+}
+
+.pet-details h1 {
+  text-align: center;
+}
+
+.pet-details p {
+  border: 1px solid black;
+  background-color: white;
+  min-height: 60px;
+  padding-top: 4px;
+  padding-left: 4px;
+  margin-bottom: 30px;
 }

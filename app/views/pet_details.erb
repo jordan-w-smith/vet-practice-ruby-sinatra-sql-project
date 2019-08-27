@@ -1,14 +1,50 @@
-<h1>Details of Pet</h1>
-<p>Name: <%= @pet.name %> </p>
-<p>Specie: <%= @pet.specie %> </p>
-<p>Breed: <%= @pet.breed %> </p>
-<p>Year of Birth: <%= @pet.year_of_birth %> </p>
-<p>Age: <%= @pet.age %> </p>
-<p>Notes: <%= @pet.notes %></p>
-<p>Owner Name: <%= @pet.owner_name %> </p>
-<p>Owner Phone Number: <%= @pet.owner_phone %> </p>
-<p>Owner Address: <%= @pet.owner_address %> </p>
-<p>Vet Assigned: <%= "DR #{@vet.first_name} #{@vet.last_name}" %> </p>
+<div class="pet-details">
+  <h1>Details of Pet</h1>
+
+  <table class="pet-details-table">
+    <tr>
+      <th>Name:</th>
+      <td><%= @pet.name %></td>
+    </tr>
+    <tr>
+      <th>Specie:</th>
+      <td><%= @pet.specie %></td>
+    </tr>
+    <tr>
+      <th>Breed:</th>
+      <td><%= @pet.breed %></td>
+    </tr>
+    <tr>
+      <th>Year of Birth:</th>
+      <td><%= @pet.year_of_birth %></td>
+    </tr>
+    <tr>
+      <th>Age:</th>
+      <td><%= @pet.age %></td>
+    </tr>
+  </table>
+  <table class="pet-owner-details-table">
+    <tr>
+      <th>Owner Name:</th>
+      <td><%= @pet.owner_name %></td>
+    </tr>
+    <tr>
+      <th>Owner Phone Number:</th>
+      <td><%= @pet.owner_phone %></td>
+    </tr>
+    <tr>
+      <th>Owner Address:</th>
+      <td><%= @pet.owner_address %></td>
+    </tr>
+    <tr>
+      <th>Vet Assigned:</th>
+      <td><%= "DR #{@vet.first_name} #{@vet.last_name}" %></td>
+    </tr>
+  </table>
+
+  <p><%= @pet.notes %></p>
 
 
-<a href="/vets/<%= @pet.id %>/edit">Edit Record</a>
+  <a href="/pets/<%= @pet.id %>/edit">Edit Record</a>
+
+</div>
