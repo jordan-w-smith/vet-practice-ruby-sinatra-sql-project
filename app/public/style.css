@@ -279,3 +279,27 @@ fieldset {
 .create-new-vet .form-row {
   margin-bottom: 20px;
 }
+
+.home-page {
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid black;
+  width: 40%;
+  border-radius: 15px;
+}
+
+.home-page a {
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 26px;
+  text-decoration: none;
+  color: green;
+}
+
+.home-page img {
+  width: 40px;
+  padding-right: 20px;
+
+}

@@ -4,6 +4,12 @@ require('sinatra/contrib/all')
 require_relative('models/pet')
 require_relative('models/vet')
 
+# index page
+
+get '/' do
+  erb(:index)
+end
+
 # vet list
 get '/vets' do
   @vets = Vet.all
