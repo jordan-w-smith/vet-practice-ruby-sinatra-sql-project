@@ -40,6 +40,7 @@ nav a {
 header {
   width: 15%;
   margin-left: 70px;
+  padding-top: 40px;
 }
 
 body {
@@ -99,7 +100,7 @@ body {
   text-align: center;
 }
 
-.pet-details h1 {
+h1 {
   text-align: center;
 }
 
@@ -113,7 +114,7 @@ body {
 }
 
 .all-pets {
-  width: 47%;
+  width: 60%;
   /* margin-left: auto;
   margin-right: auto; */
   background-color: #4df083;
@@ -122,4 +123,159 @@ body {
   padding-bottom: 50px;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.all-vets {
+  width: 50%;
+  background-color: #4df083;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.all-vets table {
+  margin-bottom: 50px;
+}
+
+.all-vets tr {
+  background-color: #3dbf69;
+
+}
+
+.all-vets th,
+.all-vets td {
+  width: 25%;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.fully-booked {
+  color: red;
+}
+
+.available {
+  color: white;
+}
+
+.all-pets table {
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.all-pets th,
+.all-pets td {
+  width: 10%;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.all-pets tr {
+  background-color: #3dbf69;
+}
+
+.all-pets tr:hover {
+  background-color: #03fc4e;
+}
+
+.vet-details {
+  width: 47%;
+  background-color: #4df083;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.vet-details-table {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.vet-details-table td, .pet-details-table th {
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+
+}
+
+.vet-details-table tr {
+  background-color: #40c28a;
+  margin-bottom: 20px;
+}
+
+.vet-details-table th {
+  width: 50%;
+}
+
+.vet-details-table td {
+  width: 50%;
+}
+
+.create-new-pet, .edit-pet {
+  width: 35%;
+  background-color: #4df083;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+.create-new-pet label,
+.create-new-pet input,
+.edit-pet label,
+.edit-pet input {
+  width: 50%;
+}
+
+.create-new-pet label {
+  text-align: center;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+.create-new-vet, .edit-vet {
+  width: 35%;
+  background-color: #4df083;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+.create-new-vet table {
+  margin-top: 50px;
+}
+
+.create-new-vet label,
+.create-new-vet input,
+.edit-vet input,
+.edit-vet label {
+  width: 50%;
+}
+
+.create-new-vet input#submit {
+  display: flex;
+  justify-content: center;
+}
+
+.create-new-vet .form-row {
+  margin-bottom: 20px;
 }

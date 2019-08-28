@@ -2,16 +2,41 @@
 
   <h1>All Pets</h1>
 
-  <% @pets.each do |pet| %>
-    <p>Name: <%= pet.name %> </p>
-    <p>Specie: <%= pet.specie %></p>
-    <p>Breed: <%= pet.breed %> </p>
-    <p>Age: <%= pet.age %> </p>
-    <a href="pets/<%= pet.id %>">See Details</a>
-    <hr>
-  <% end %>
 
-  <hr>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Specie</th>
+      <th>Breed</th>
+      <th>Age</th>
+      <th>Vet</th>
+    </tr>
+
+      <% @pets.each do |pet| %>
+
+        <tr>
+
+            <td><a href="pets/<%= pet.id %>"><%= pet.name %></a></td>
+
+          <td><%= pet.specie %></td>
+          <td><%= pet.breed %></td>
+          <td><%= pet.age %></td>
+          <td>
+            <% for vet in @vets %>
+              <% if vet.id == pet.vet_id %>
+                <%= "Dr " + vet.first_name + " " + vet.last_name %>
+              <% end %>
+
+            <% end %>
+
+
+          </td>
+        </tr>
+
+      <% end %>
+
+
+  </table>
 
   <a href="/pets/new">Create New Pet</a>
 

@@ -34,7 +34,15 @@ post '/vets/:id' do
   redirect to '/vets'
 end
 
-#view individual vet details
+# delete vet
+
+post '/vets/:id/delete' do
+  vet = Vet.find(params[:id])
+  vet.delete()
+  redirect to '/vets'
+end
+
+# view individual vet details
 
 get '/vets/:id' do
   @vet = Vet.find(params[:id])
@@ -45,6 +53,7 @@ end
 
 get '/pets' do
   @pets = Pet.all
+  @vets = Vet.all
   erb(:pets)
 end
 
@@ -65,12 +74,20 @@ end
 
 get '/pets/:id/edit' do
   @pet = Pet.find(params[:id])
-  @vets = Vet.all
+  @vets = Vet.all()
   erb(:edit_pet)
 end
 
 post '/pets/:id' do
   Pet.new(params).update
+  redirect to '/pets'
+end
+
+# delete pet
+
+post '/pets/:id/delete' do
+  pet = Pet.find(params[:id])
+  pet.delete()
   redirect to '/pets'
 end
 

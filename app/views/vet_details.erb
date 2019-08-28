@@ -1,6 +1,27 @@
+<div class="vet-details">
 <h1>Vet Details</h1>
-<p><%= "Dr #{@vet.first_name} #{@vet.last_name}" %></p>
-<p>Phone: <%= @vet.phone_number %></p>
-<p>Pets in care: <%= @vet.pet_count %></p>
-<p>Available Slots: <%= @vet.available_slots %></p>
+
+<table class="vet-details-table">
+  <tr>
+    <th>Name</th>
+    <td><%= "Dr #{@vet.first_name} #{@vet.last_name}" %></td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td><%= @vet.phone_number %></td>
+  </tr>
+  <tr>
+    <th>Pets in Care</th>
+    <td><%= @vet.pet_count %></td>
+  </tr>
+  <tr>
+    <th>Available Slots</th>
+    <td><%= @vet.available_slots %></td>
+  </tr>
+</table
+
 <button><a href="/vets/<%= @vet.id %>/edit">Edit Record</a></button>
+<form method="post" action="/vets/<%= @vet.id %>/delete">
+  <input type="submit" value="Remove Employee">
+</form>
+</div>

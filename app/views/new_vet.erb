@@ -1,15 +1,30 @@
-<form method="post" action="/vets">
-  <label for="first-name">First Name: </label>
-  <input type="text" name="first_name" id="first-name">
+<div class="create-new-vet">
 
-  <label for="last-name">Last Name: </label>
-  <input type="text" name="last_name" id="last-name">
+  <h1>Add New Vet</h1>
 
-  <label for="phone-number">Phone Number: </label>
-  <input type="text" name="phone_number" id="phone-number">
+  <form method="post" action="/vets">
 
-  <label for="max-pets">Maximum Pets in Care: </label>
-  <input type="number" name="max_pets" id="max-pets">
+    <div class="form-row">
+      <label for="first-name">First Name: </label>
+      <input type="text" name="first_name" id="first-name">
+    </div>
 
-  <input type="submit" value="Save Record">
-</form>
+    <div class="form-row">
+      <label for="last-name">Last Name: </label>
+      <input type="text" name="last_name" id="last-name">
+    </div>
+
+    <div class="form-row">
+      <label for="phone-number">Phone Number: </label>
+      <input type="text" name="phone_number" id="phone-number">
+    </div>
+
+    <div class="form-row">
+      <label for="max-pets">Maximum Pets in Care: </label>
+      <input type="number" name="max_pets" id="max-pets">
+    </div>
+
+    <input type="submit" value="Save Record" id="submit">
+  </form>
+
+</div>
